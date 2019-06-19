@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const filesAndFoldersExclusionList = ["node_modules", ".git", "todoSearch"];
+const filesAndFoldersExclusionList = ["node_modules", ".git", "todoSearch","dist"];
 const fileList = [];
 
 exports.fetchAllFilePaths = directory => {
@@ -10,6 +10,7 @@ exports.fetchAllFilePaths = directory => {
     console.log("No such directory");
     return;
   }
+
   const files = fs.readdirSync(directory);
   files.forEach(file => {
     if (!filesAndFoldersExclusionList.includes(file)) {

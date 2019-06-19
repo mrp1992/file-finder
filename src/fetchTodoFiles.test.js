@@ -2,7 +2,7 @@ const fetchTodoFiles = require('./fetchTodoFiles');
 const path = require('path');
 
 describe('fetchTodoFiles', () => {
-    const folderPath = path.join(__dirname, '..');
+    const folderPath = path.join(__dirname, '../..');
     const currentDirectory = path.join(folderPath, 'testData');
 
     it('should return all the files with absolute path which have TODO', () => {

@@ -4,8 +4,9 @@
   "description": "To find all the files with absolute path where TODO is present ",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "jest --coverage"
+    "start": "node dist/bundle.js",
+    "test": "jest --coverage",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,8 @@
   },
   "homepage": "https://github.com/mrp1992/todoSearch#readme",
   "devDependencies": {
-    "jest": "^24.8.0"
+    "jest": "^24.8.0",
+    "webpack": "^4.34.0",
+    "webpack-cli": "^3.3.4"
   }
 }
