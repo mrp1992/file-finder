@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
+const exclusionList = require("./exclusionListUtil");
 
-const filesAndFoldersExclusionList = ["node_modules", ".git", "todoSearch","dist"];
 const fileList = [];
 
 exports.fetchAllFilePaths = directory => {
@@ -13,7 +13,7 @@ exports.fetchAllFilePaths = directory => {
 
   const files = fs.readdirSync(directory);
   files.forEach(file => {
-    if (!filesAndFoldersExclusionList.includes(file)) {
+    if (!exclusionList.isFileExcluded(file)) {
       const fileName = path.join(directory, file);
       if (fs.lstatSync(fileName).isDirectory()) {
         this.fetchAllFilePaths(fileName);

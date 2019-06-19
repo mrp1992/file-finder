@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node dist/bundle.js",
     "test": "jest --coverage",
-    "build": "webpack"
+    "build": "webpack & cp src/exclusionList.json dist/"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   "homepage": "https://github.com/mrp1992/todoSearch#readme",
   "devDependencies": {
     "jest": "^24.8.0",
+    "json-loader": "^0.5.7",
     "webpack": "^4.34.0",
     "webpack-cli": "^3.3.4"
   }

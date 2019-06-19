@@ -13,4 +13,16 @@ module.exports = {
         fs: "require('fs')",
     },
     mode: 'production',
+
+    module: {
+        rules: [
+            {
+                test: '/\.json$/',
+                use: [{loader: 'json-loader'}],
+                include: [
+                    path.resolve(__dirname, 'src')
+                ]
+            }
+        ]
+    }
 }
